@@ -1,0 +1,236 @@
+:root {
+  --forest: #224B0C;
+  --bronze: #AC7D2D;
+  --white: #ffffff;
+  --light: #f0f0f0;
+  --radius: 8px;
+  --shadow: 0 10px 25px rgba(0,0,0,0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Login Container */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--forest), var(--bronze));
+  padding: 1rem;
+}
+
+.login-form-wrapper {
+  flex: 0 1 450px;
+  padding: 2.5rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.login-form-container {
+  width: 100%;
+}
+
+/* Logo */
+.login-logo {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--forest);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Tabs */
+.login-tabs {
+  display: flex;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--light);
+  background: var(--white);
+}
+
+.login-tab {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--forest);
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  bottom: -2px;
+}
+
+.login-tab.active {
+  color: var(--bronze);
+  border-bottom: 3px solid var(--bronze);
+}
+
+.login-tab:hover:not(.active) {
+  color: var(--bronze);
+  background: rgba(172, 125, 45, 0.1);
+}
+
+/* Forms */
+.form-content {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--forest);
+  box-shadow: 0 0 0 3px rgba(34, 75, 12, 0.1);
+}
+
+.required {
+  color: #dc3545;
+  margin-left: 0.25rem;
+}
+
+/* Buttons */
+.login-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--forest);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+}
+
+.login-btn:hover:not(:disabled) {
+  background: var(--bronze);
+  transform: translateY(-1px);
+}
+
+.login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn-text, .btn-loading {
+  display: inline-block;
+}
+
+.btn-loading {
+  display: none;
+}
+
+.login-btn.loading .btn-text {
+  display: none;
+}
+
+.login-btn.loading .btn-loading {
+  display: inline-block;
+}
+
+/* Form Footer */
+.form-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.forgot-password {
+  margin-bottom: 1rem;
+}
+
+.forgot-password a,
+.form-switch a {
+  color: var(--bronze);
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.forgot-password a:hover,
+.form-switch a:hover {
+  color: var(--forest);
+  text-decoration: underline;
+}
+
+.form-switch {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Messages */
+.message {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  text-align: center;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.message-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+.message-success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-form-wrapper {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .login-logo {
+    font-size: 1.5rem;
+  }
+  
+  .login-tab {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+}
